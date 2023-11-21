@@ -4,6 +4,7 @@ import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 
+import org.apache.poi.EncryptedDocumentException;
 import org.apache.poi.openxml4j.exceptions.InvalidFormatException;
 import org.apache.poi.ss.usermodel.Sheet;
 import org.apache.poi.ss.usermodel.Workbook;
@@ -21,7 +22,9 @@ public class ExcelUtil {
 
 		try {
 			FileInputStream ip = new FileInputStream(TEST_DATA_SHEET_PATH);
-			book = WorkbookFactory.create(ip);
+			
+				book = WorkbookFactory.create(ip);
+			 
 			sheet = book.getSheet(sheetName);
 			data = new Object[sheet.getLastRowNum()][sheet.getRow(0).getLastCellNum()];
 
@@ -32,7 +35,7 @@ public class ExcelUtil {
 			}
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
-		} catch (InvalidFormatException e) {
+		}catch (EncryptedDocumentException e) {
 			e.printStackTrace();
 		} catch (IOException e) {
 			e.printStackTrace();

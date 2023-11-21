@@ -45,8 +45,8 @@ public class ExtentReportListener implements ITestListener {
 		ExtentSparkReporter reporter = new ExtentSparkReporter(OUTPUT_FOLDER + FILE_NAME);
 		reporter.config().setReportName("API Test Results");
 		extentReports.attachReporter(reporter);
-		extentReports.setSystemInfo("System", "MAC");
-		extentReports.setSystemInfo("Author", "Naveen AutomationLabs");
+		extentReports.setSystemInfo("System", "Win-11");
+		extentReports.setSystemInfo("Author", "Ajay Tayade");
 		extentReports.setSystemInfo("Build#", "1.1");
 		extentReports.setSystemInfo("Team", "QA Team");
 		extentReports.setSystemInfo("Customer Name", "NAL");
